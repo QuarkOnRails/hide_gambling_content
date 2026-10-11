@@ -1,0 +1,31 @@
+{
+  "language": "es",
+  "name": "Español",
+  "strong": [
+    "casino online|casinos online|casino en línea|casinos en línea|casino en vivo",
+    "tragamonedas|tragaperras|máquinas tragamonedas",
+    "giros gratis|tiradas gratis",
+    "bono sin depósito|bono de casino|bono casino|bono de bienvenida casino",
+    "compra de bonus|compra de bono",
+    "apuestas deportivas|apuesta deportiva|pronósticos deportivos|casa de apuestas|casas de apuestas",
+    "juegos de azar|juego de azar",
+    "casino|casinos"
+  ],
+  "weak": [
+    "slot|slots",
+    "ruleta",
+    "jackpot|premio gordo",
+    "ganancias|gané|ganamos",
+    "apuestas|apuesta|apostar|apostando|apostador|apostadores|aposté",
+    "póker|poker",
+    "blackjack",
+    "lotería|quiniela|rasca y gana",
+    "bono|bonos|bonus",
+    "ludopatía|ludópata|ludópatas"
+  ],
+  "exceptions": [
+    "ruleta rusa",
+    "casino royale",
+    "poker face"
+  ]
+}

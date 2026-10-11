@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>YouTube</title>
+  </head>
+  <body>
+    <!-- Watch page. ?case=gambling or ?case=clean decides the title, which is
+         filled in late, the way YouTube does after in-page navigation. -->
+    <div id="movie_player" style="width: 640px; height: 360px"><video></video></div>
+    <ytd-watch-metadata>
+      <div id="title"><h1><yt-formatted-string id="h1"></yt-formatted-string></h1></div>
+      <ytd-video-owner-renderer>
+        <ytd-channel-name><yt-formatted-string id="text"><a id="owner" href="/@somechannel">Some Channel</a></yt-formatted-string></ytd-channel-name>
+      </ytd-video-owner-renderer>
+    </ytd-watch-metadata>
+    <img src="/slow.png" alt="" />
+    <script>
+      const gambling = new URLSearchParams(location.search).get('case') === 'gambling';
+      const title = gambling ? 'Online casino bonus hunt – 40 bonuses' : 'How to repot a monstera';
+      setTimeout(() => {
+        document.getElementById('h1').textContent = title;
+      }, 300);
+      setTimeout(() => {
+        document.title = '(3) ' + title + ' - YouTube';
+      }, 500);
+    </script>
+  </body>
+</html>

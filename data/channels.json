@@ -1,0 +1,781 @@
+{
+  "version": 1,
+  "description": "Bundled blocklist of gambling channels. Matched by id, or by a compact key of handle and name: 'MrHandPay', '@mrhandpay' and 'Mr. Hand Pay' are the same channel.",
+  "source": "Names and channel ids taken from the Feedspot casino / casino streamer YouTube directories, 2026-09-20. Handles not verified, so left empty.",
+  "channels": [
+    {
+      "id": "UCVwI4eqzXg8g2sYKSVeE6AQ",
+      "handle": "",
+      "name": "Pompsie Slots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCRlliBYseo4118w3TyAqwVw",
+      "handle": "",
+      "name": "Stacey's High Limit Slots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UC57LLYCP2TygJu-qKiP-eLg",
+      "handle": "",
+      "name": "Jackpot Beauties",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCqVruR-mh0hmybaQt8FzIqg",
+      "handle": "",
+      "name": "Binky Love Slots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCbCQBD9gKSEnNtIqmKY1R3Q",
+      "handle": "",
+      "name": "Vegas Matt",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCPg-XofllkL7388IpY1msBA",
+      "handle": "",
+      "name": "Lady Luck HQ",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCOzRZLOxGmDMGo_zSBtpmqA",
+      "handle": "",
+      "name": "NG Slot",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCgfPHIaCoWc8SHDVYH_z9yg",
+      "handle": "",
+      "name": "Mr. Hand Pay",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCDyrCJyFaOLc8OnnCd0Khcg",
+      "handle": "",
+      "name": "Brian Christopher Slots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCHFz3F_wTBHhOMqTTlAeNTA",
+      "handle": "",
+      "name": "TheBigJackpot",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCFzDH85agavotTp3QHOJDfw",
+      "handle": "",
+      "name": "VegasLowRoller",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCQe7wB0o_cZgv1miyYB9TMA",
+      "handle": "",
+      "name": "Hustler Casino Live",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCqkyLBVvHAvb0zThPgj4bBQ",
+      "handle": "",
+      "name": "Cowboy Slots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UC3Qx9Sd5jty3uZJ9L0dlNRg",
+      "handle": "",
+      "name": "All Casino Action",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCZlcRahEyH1FVjUBEA_3apg",
+      "handle": "",
+      "name": "TheBigPayback - Slot Machine Videos",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UC6JcrODdoVj_mH1WtGbIZDg",
+      "handle": "",
+      "name": "Low Budget High Rollers",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UC-x4b_ZpsSUS3ICfwHWkO2A",
+      "handle": "",
+      "name": "The Jackpot Gents",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCYpV0BZvTvVVW_9yqtZsK5g",
+      "handle": "",
+      "name": "Ruby Slots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCASGPE677dosnkwDAjOP8Kw",
+      "handle": "",
+      "name": "Never Split 10s",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCVkXupYSf9vh-DsvGejluFw",
+      "handle": "",
+      "name": "SC Slots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCtv16bERZanomptf7XVvR0A",
+      "handle": "",
+      "name": "LetsGiveItASpin - Casino Streamer",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCVDWFfnAivYjMEtDSnvo3iA",
+      "handle": "",
+      "name": "Mama Cip Slots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCP7Y9C7vXWrCtFlDViS5vOA",
+      "handle": "",
+      "name": "CasinoGrounds",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UC_IsOdrdomgUs_D9otp1gZQ",
+      "handle": "",
+      "name": "Having Fun With NG SLOT",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCrh5xHOGIFt0BDCjMpB8smQ",
+      "handle": "",
+      "name": "Raja Slots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCw-ahTi4CfmMMKcquPExkew",
+      "handle": "",
+      "name": "Slot Hopper",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCx_MTG3VFh3dgcfUoBZeOLA",
+      "handle": "",
+      "name": "The Bandit's Slot Video Channel",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCYmXX03v39qG-HDx651rbIA",
+      "handle": "",
+      "name": "Casino Kings",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCCNtM9VUaqblcjGo7OgFYOw",
+      "handle": "",
+      "name": "Albert's Slot Channel - Slot Machine Videos",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCpyLp493L8QjrJ4PaL5NOrg",
+      "handle": "",
+      "name": "Casino Quest",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UChnluLNpo-y5uwAvUNJmlog",
+      "handle": "",
+      "name": "Slot Machine Wins By CHICO",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCnD_cMTuJ5mYenDxLAtUwjQ",
+      "handle": "",
+      "name": "OldSchoolSlots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCzJM7v8ZDwujyBZhjdRNDKA",
+      "handle": "",
+      "name": "Casinodaddy Gambling",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCw4WCXeA-t7K1XgNawtQ8Ug",
+      "handle": "",
+      "name": "Jackpot Party Casino",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCdvmWR3-9Zm_-CyD0zXu4hg",
+      "handle": "",
+      "name": "NewEnglander82 SLOT VIDEOS",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCvz9SXa9lxP5SL2t1poGecg",
+      "handle": "",
+      "name": "NJ Slot Guy",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UC890cbX7M9bFyaA88M9p83Q",
+      "handle": "",
+      "name": "Jackpot World - Slots Casino",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UC1Ru5ZqoiF1cFwQSuFuv-KA",
+      "handle": "",
+      "name": "Chipmonkz Slots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCvYPYBiF--N1Wy-3d5jhF2w",
+      "handle": "",
+      "name": "Rocknrolla's Gambling Channel",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCtZ8sDzMGP_ZlSKuFPgDJnQ",
+      "handle": "",
+      "name": "CASINO SCORES",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCkFMTO28RUq0EYZhXzRgR1A",
+      "handle": "",
+      "name": "SlotsBoom Casino Slot Videos",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCNEAULhnK7A8I528v9LJXVg",
+      "handle": "",
+      "name": "Shinobi Slots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCoFOosnb0obBoluJbBFxLdg",
+      "handle": "",
+      "name": "Ignition Casino",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UC0BcWejLZSku_y9EKuespaQ",
+      "handle": "",
+      "name": "EZ Life Slot Jackpots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UClpoinZuLFcmlzQk6YzArcg",
+      "handle": "",
+      "name": "David Labowsky - Casino Streamer",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCdM3dX6I5BSdy8Z0F8izgBw",
+      "handle": "",
+      "name": "Gulf Coast Slots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UC7fbBtGfuoDhNuksgQtgYOQ",
+      "handle": "",
+      "name": "Slotaholic",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCWCb0gySbq6qrYPc7AqsEKA",
+      "handle": "",
+      "name": "Slot Cracker",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCyPK5fZ7grAkI878YkeD4SQ",
+      "handle": "",
+      "name": "King's Casino",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCotvzEGbb-P9JFEphs_SXcw",
+      "handle": "",
+      "name": "Slotspinner - Casino Streamer",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UC3OWfTn4owighe_VJ9o9Jow",
+      "handle": "",
+      "name": "Jackpot Impossible",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCEJTB1GMgiY7HSVlDEHrRWQ",
+      "handle": "",
+      "name": "Fast Action Casino",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UC6PCCMvCMkDiWYZkGf71Hwg",
+      "handle": "",
+      "name": "Slot Queen",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCvOEO35ieBuL-KdV0fXiuag",
+      "handle": "",
+      "name": "Bally Live Poker",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCPFCaioUvR2s8rZWBj6vPCA",
+      "handle": "",
+      "name": "Mr Mike Slots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCs8PaytOOdEmYm6VFgEO0Uw",
+      "handle": "",
+      "name": "BOMBA Slots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCiUiGBd_m_g0lPALN9DNyxg",
+      "handle": "",
+      "name": "Fruity Slots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCxfsHz9cJQWM7upD4_7H4eg",
+      "handle": "",
+      "name": "Call Attendant Slots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCSjQxRROT9kJIzTXDzDMnHw",
+      "handle": "",
+      "name": "The Slot Master 316",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCvzzymMlRJZkMclBoWkK0IQ",
+      "handle": "",
+      "name": "Gamblers Unknown",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UC6iYSPTVM-Vos4xKNjTq4yA",
+      "handle": "",
+      "name": "Paylines Slot Channel",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCix3S6P1cKtiXmTwuwriiOQ",
+      "handle": "",
+      "name": "Brian Of Denver Slots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCiW-swmFQfIonZdCZLi4Bvg",
+      "handle": "",
+      "name": "The Great American Gambler",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UC43rIqdJlx08LSp3mfw8z6w",
+      "handle": "",
+      "name": "Debbie Loves Slots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCrCbNyBgVvXpYzHy40dF8gQ",
+      "handle": "",
+      "name": "Jus SaYin Slots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCuy6YPNvm5paP9sgZdQpNFw",
+      "handle": "",
+      "name": "Slot Magic",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCOO6q17ves8rCja2Yp_fFww",
+      "handle": "",
+      "name": "QuickHundySlots",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCNDjyb-wsJIq0gIzFBKBi8A",
+      "handle": "",
+      "name": "CasinoFanatic78",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "UCGo9hD3EB6ujAZQznyK-FLA",
+      "handle": "",
+      "name": "LIVE CRAPS in CASINO",
+      "tags": [
+        "casino"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "",
+      "handle": "",
+      "name": "WillyPlay",
+      "tags": [
+        "user-reported"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "",
+      "handle": "",
+      "name": "Cumtism Gambles",
+      "tags": [
+        "user-reported"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "",
+      "handle": "",
+      "name": "Brettski",
+      "tags": [
+        "user-reported"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "",
+      "handle": "",
+      "name": "TheOnTiltBoys",
+      "tags": [
+        "user-reported"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "",
+      "handle": "",
+      "name": "Dude Luck 23",
+      "tags": [
+        "user-reported"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "",
+      "handle": "",
+      "name": "Brandon O'Brien",
+      "tags": [
+        "user-reported"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "",
+      "handle": "",
+      "name": "DebWins",
+      "tags": [
+        "user-reported"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "",
+      "handle": "",
+      "name": "adventuresoftheV2s",
+      "tags": [
+        "user-reported"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "",
+      "handle": "",
+      "name": "Internet Skater",
+      "tags": [
+        "user-reported"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "",
+      "handle": "",
+      "name": "JackpotJudo",
+      "tags": [
+        "user-reported"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "",
+      "handle": "",
+      "name": "MrHandPay",
+      "tags": [
+        "user-reported"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "",
+      "handle": "",
+      "name": "bluffinbrandino",
+      "tags": [
+        "user-reported"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "",
+      "handle": "",
+      "name": "TheCasinoKing",
+      "tags": [
+        "user-reported"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "",
+      "handle": "",
+      "name": "RomuloDorea",
+      "tags": [
+        "user-reported"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "",
+      "handle": "",
+      "name": "theabsolutenuts",
+      "tags": [
+        "user-reported"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "",
+      "handle": "",
+      "name": "degendalt",
+      "tags": [
+        "user-reported"
+      ],
+      "added": "2026-09-20"
+    },
+    {
+      "id": "",
+      "handle": "",
+      "name": "jakepokervegas",
+      "tags": [
+        "user-reported"
+      ],
+      "added": "2026-09-20"
+    }
+  ]
+}

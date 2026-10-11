@@ -1,0 +1,42 @@
+{
+  "language": "sk",
+  "name": "Slovenčina",
+  "strong": [
+    "online kasíno|online kasína|online kazino|kasíno online|živé kasíno|live kasíno",
+    "výherné automaty|výherný automat|hracie automaty|hrací automat|online automaty",
+    "voľné otočenia|voľné zatočenia|voľných otočení|free spiny|free spinov",
+    "bonus bez vkladu|kasíno bonus|casino bonus|vstupný bonus",
+    "nákup bonusu",
+    "najväčší jackpot|obrovský jackpot|rekordný jackpot|mega jackpot|vyhral jackpot|vyhrala jackpot|vyhrali jackpot|výhra jackpotu",
+    "kurzové stávky|kurzové stávkovanie|športové stávky|športové stávkovanie|stávkovanie na šport",
+    "tipy na stávkovanie|stávkarské tipy|tiket dňa|stávkový tiket|ako tiket",
+    "stratégia na ruletu|ruleta stratégia",
+    "hazardné hry|hazardných hier",
+    "kasíno|kasína|kasíne|kasínu|kasínom|kasínach|kazino|kazína|casino",
+    "gambling|gambler|gambleri|gamblerstvo"
+  ],
+  "weak": [
+    "automaty|automatoch|automatov",
+    "sloty|slot|slotov|slotoch",
+    "ruleta|ruletu|rulete|ruletou|rulety",
+    "jackpot|jackpoty",
+    "výhra|výhry|výhru|výhier|výhrou|vyhral|vyhrali",
+    "stávky|stávka|stávku|stávok|stávkovanie|stávkar|stávkari",
+    "stávková kancelária|stávkové kancelárie|stávkovka|stávkovky",
+    "hazard|hazardu|hazardom|hazardné|hazardných",
+    "poker|pokeru",
+    "blackjack",
+    "lotéria|lotérie|lotériu|stierací žreb*|stieracie žreb*",
+    "bonus|bonusy",
+    "otočky|zatočenia|spiny|spinov",
+    "herňa|herne|herni"
+  ],
+  "exceptions": [
+    "ruská ruleta|ruskú ruletu|ruskej rulete",
+    "casino royale",
+    "poker face",
+    "eden hazard|thorgan hazard",
+    "fortuna liga",
+    "automat na kávu|kávový automat|kávové automaty|predajný automat*|nápojový automat*|výdajný automat*"
+  ]
+}

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hide Gambling Content</title>
+    <link rel="stylesheet" href="../ui.css" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="row">
+      <div class="grow">
+        <h1>Hide Gambling Content</h1>
+        <p class="muted small" id="status">…</p>
+      </div>
+      <label class="switch" title="Turn hiding on or off">
+        <input type="checkbox" id="enabled" />
+        <span></span>
+      </label>
+    </header>
+
+    <section id="page-channel" hidden>
+      <p class="label">This channel</p>
+      <div class="row">
+        <div class="grow">
+          <p class="ellipsis" id="pc-name"></p>
+          <p class="muted small ellipsis" id="pc-handle"></p>
+        </div>
+        <div class="actions">
+          <button class="primary" id="pc-block">Block</button>
+          <button id="pc-allow" title="Never hide videos of this channel">Never hide</button>
+        </div>
+      </div>
+      <p class="muted small" id="pc-state" hidden></p>
+      <p class="muted small" id="pc-hint">Block also tells YouTube “Don’t recommend channel”.</p>
+    </section>
+
+    <section>
+      <label class="row option">
+        <span class="grow">
+          Guard opened videos
+          <span class="muted small block">Skip matching Shorts, black out a matching video you open</span>
+        </span>
+        <span class="switch"><input type="checkbox" id="guard" /><span></span></span>
+      </label>
+      <label class="row option">
+        <span class="grow">
+          Tell YouTube too
+          <span class="muted small block">
+            When the extension hides a gambling video, it also tells your YouTube account “Not interested”, or
+            “Don’t recommend channel” for gambling channels. The YouTube app on your phone then shows less of it too.
+          </span>
+        </span>
+        <span class="switch"><input type="checkbox" id="tellYoutube" /><span></span></span>
+      </label>
+      <p class="small" id="yt-state"></p>
+    </section>
+
+    <footer class="row">
+      <span class="muted small" id="totals"></span>
+      <button id="open-options">Settings</button>
+    </footer>
+
+    <script src="../api.js"></script>
+    <script src="../normalize.js"></script>
+    <script src="../store.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

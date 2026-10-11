@@ -1,0 +1,12 @@
+{
+  "name": "hide-gambling-content",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Browser extension that hides gambling content on YouTube (Chrome + Firefox).",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "e2e": "node test/e2e/run.js",
+    "lint:firefox": "npx --yes web-ext@7 lint --ignore-files 'test/**' 'scripts/**' 'dist/**' package.json README.md",
+    "package": "bash scripts/package.sh"
+  }
+}

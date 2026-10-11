@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Restrict e2e seed</title>
+  </head>
+  <body>
+    <!-- Test only, not packaged: opened as an extension page by run.js. -->
+    <script src="../../src/api.js"></script>
+    <script src="seed.js"></script>
+    <!-- holds back the load event (and --dump-dom) until storage is written -->
+    <img src="https://www.youtube.com/slow.png?ms=1500" alt="" />
+  </body>
+</html>

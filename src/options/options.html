@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hide Gambling Content – Settings</title>
+    <link rel="stylesheet" href="../ui.css" />
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Hide Gambling Content</h1>
+        <p class="muted">Hides gambling videos, streams and channels on YouTube. Changes apply to open tabs immediately.</p>
+      </header>
+
+      <section>
+        <h2>General</h2>
+        <label class="row option">
+          <span class="grow">Hiding enabled</span>
+          <span class="switch"><input type="checkbox" id="enabled" /><span></span></span>
+        </label>
+        <label class="row option">
+          <span class="grow">
+            Guard opened videos
+            <span class="muted small block">Matching Shorts are skipped while you scroll. A matching video you open is paused and blacked out, with a small “Show” button in the corner.</span>
+          </span>
+          <span class="switch"><input type="checkbox" id="guard" /><span></span></span>
+        </label>
+        <label class="row option">
+          <span class="grow">
+            Tell YouTube too
+            <span class="muted small block">When the extension hides a gambling video, it also tells your YouTube account “Not interested”, or “Don’t recommend channel” for gambling channels. The YouTube app on your phone then shows less of it too. Channels you block yourself are always reported, with this switch on or off.</span>
+          </span>
+          <span class="switch"><input type="checkbox" id="tellYoutube" /><span></span></span>
+        </label>
+        <label class="row option">
+          <span class="grow">
+            Score needed to hide
+            <span class="muted small block">Strong keyword = 2 points, weak keyword = 1 point. Default 2. Higher hides less.</span>
+          </span>
+          <input type="number" id="threshold" min="1" max="10" step="1" />
+        </label>
+      </section>
+
+      <section>
+        <h2>Keyword languages</h2>
+        <p class="muted small">Operator and slot-game names are always active.</p>
+        <div id="languages" class="chips"></div>
+      </section>
+
+      <section>
+        <h2>Try a title</h2>
+        <p class="muted small">Check how the current rules score a title before you meet it on YouTube.</p>
+        <div class="grid2">
+          <input type="text" id="try-title" placeholder="Video title" />
+          <input type="text" id="try-channel" placeholder="Channel name (optional)" />
+        </div>
+        <p id="try-result" class="result muted">Type a title.</p>
+      </section>
+
+      <section>
+        <h2>Your keywords</h2>
+        <p class="muted small">
+          One entry per line. <code>slot|slots</code> lists variants of one word (counted once).
+          A trailing <code>*</code> allows any ending: <code>sázkař*</code>. Spaces also match hyphens and no space:
+          <code>bonus buy</code> finds “bonus-buy” and “bonusbuy”. Case and accents do not matter.
+          Entries under “Channel name contains” match anywhere in a channel’s name or handle, also inside
+          glued words: <code>jackpot</code> blocks “JackpotJudo”. “casino” and “jackpot” are built in.
+        </p>
+        <div class="grid3 grid-kw">
+          <label>
+            <span class="field">Strong <span class="muted">hides on its own</span></span>
+            <textarea id="kw-strong" spellcheck="false"></textarea>
+          </label>
+          <label>
+            <span class="field">Weak <span class="muted">needs a second hit</span></span>
+            <textarea id="kw-weak" spellcheck="false"></textarea>
+          </label>
+          <label>
+            <span class="field">Exceptions <span class="muted">phrases to ignore</span></span>
+            <textarea id="kw-exceptions" spellcheck="false"></textarea>
+          </label>
+          <label>
+            <span class="field">Channel name contains <span class="muted">blocks the whole channel</span></span>
+            <textarea id="kw-channel" spellcheck="false"></textarea>
+          </label>
+        </div>
+        <div class="row end">
+          <span class="muted small" id="kw-status"></span>
+          <button class="primary" id="kw-save">Save keywords</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Suggested channels</h2>
+        <p class="muted small">Channels whose videos were hidden by keywords at least <span id="suggest-after"></span> times.</p>
+        <ul class="list" id="suggestions"></ul>
+      </section>
+
+      <section>
+        <h2>Blocked channels</h2>
+        <p class="muted small">
+          Everything from these channels is hidden, and YouTube is told “Don’t recommend channel” the next time one
+          of their videos shows up in your home feed. <span id="bundled-count"></span>
+        </p>
+        <form class="row add" id="block-form">
+          <input type="text" id="block-input" placeholder="@handle, channel URL, channel ID (UC…) or exact name" />
+          <button class="primary">Block</button>
+        </form>
+        <ul class="list" id="blocked"></ul>
+      </section>
+
+      <section>
+        <h2>Never hide</h2>
+        <p class="muted small">Videos from these channels are always shown, whatever their title says.</p>
+        <form class="row add" id="allow-form">
+          <input type="text" id="allow-input" placeholder="@handle, channel URL, channel ID (UC…) or exact name" />
+          <button>Add</button>
+        </form>
+        <ul class="list" id="allowed"></ul>
+      </section>
+
+      <section>
+        <h2>Reported to YouTube</h2>
+        <p class="muted small">
+          What the extension told your YouTube account. <span id="reports-today"></span> Reports are sent from the home feed,
+          so a blocked channel is reported the next time one of its videos shows up there. Removing a channel
+          from the lists above does not undo it on YouTube: delete the entry in
+          <a href="https://myactivity.google.com/" target="_blank" rel="noopener">Google My Activity</a>, under Other
+          activity → YouTube “Not interested” feedback.
+        </p>
+        <p class="small warn" id="reports-error" hidden></p>
+        <ul class="list" id="reports"></ul>
+      </section>
+
+      <section>
+        <h2>Backup</h2>
+        <p class="muted small">Your keywords, channel lists and settings as one JSON file. Use it to move between Chrome and Firefox.</p>
+        <div class="row start">
+          <button id="export">Export</button>
+          <button id="import">Import and merge</button>
+          <button id="import-replace">Import and replace</button>
+          <input type="file" id="import-file" accept="application/json,.json" hidden />
+        </div>
+        <p class="small" id="backup-status"></p>
+      </section>
+    </main>
+
+    <script src="../api.js"></script>
+    <script src="../normalize.js"></script>
+    <script src="../matcher.js"></script>
+    <script src="../store.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

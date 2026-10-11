@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Fixture - YouTube</title>
+  </head>
+  <body>
+    <!-- Markup mimics the parts of YouTube's DOM the extension reads. -->
+
+    <!-- 1. home: new lockup inside a rich item, keyword hit, channel link -->
+    <ytd-rich-item-renderer id="t1" data-expect="hidden">
+      <div id="content">
+        <yt-lockup-view-model>
+          <a class="yt-lockup-view-model__content-image" href="/watch?v=aaaaaaaaaa1"></a>
+          <h3 class="yt-lockup-metadata-view-model__heading-reset" title="INSANE BONUS BUY SESSION – MAX WIN?!">
+            <a class="yt-lockup-metadata-view-model__title" href="/watch?v=aaaaaaaaaa1"><span>INSANE BONUS BUY SESSION – MAX WIN?!</span></a>
+          </h3>
+          <div class="yt-content-metadata-view-model__metadata-row">
+            <span class="yt-content-metadata-view-model__metadata-text"><a href="/@SlotKing">Slot King</a></span>
+          </div>
+        </yt-lockup-view-model>
+      </div>
+    </ytd-rich-item-renderer>
+
+    <!-- 2. home: clean video -->
+    <ytd-rich-item-renderer id="t2" data-expect="shown">
+      <div id="content">
+        <yt-lockup-view-model>
+          <a href="/watch?v=aaaaaaaaaa2"></a>
+          <h3 title="Ruby on Rails 8 tutorial"><a class="yt-lockup-metadata-view-model__title" href="/watch?v=aaaaaaaaaa2"><span>Ruby on Rails 8 tutorial</span></a></h3>
+          <div class="yt-content-metadata-view-model__metadata-row">
+            <span class="yt-content-metadata-view-model__metadata-text"><a href="/@railsdev">Rails Dev</a></span>
+          </div>
+        </yt-lockup-view-model>
+      </div>
+    </ytd-rich-item-renderer>
+
+    <!-- 3. search: classic renderer, Czech keywords -->
+    <ytd-video-renderer id="t3" data-expect="hidden">
+      <a id="thumbnail" href="/watch?v=aaaaaaaaaa3"></a>
+      <a id="video-title" title="Výherní automaty – obří výhra v kasinu" href="/watch?v=aaaaaaaaaa3">Výherní automaty – obří výhra v kasinu</a>
+      <ytd-channel-name><yt-formatted-string id="text"><a href="/channel/UCabcdefghijklmnopqrstuv">Automaty CZ</a></yt-formatted-string></ytd-channel-name>
+    </ytd-video-renderer>
+
+    <!-- 4. search: look-alike that must stay -->
+    <ytd-video-renderer id="t4" data-expect="shown">
+      <a id="thumbnail" href="/watch?v=aaaaaaaaaa4"></a>
+      <a id="video-title" title="Casino Royale – official trailer" href="/watch?v=aaaaaaaaaa4">Casino Royale – official trailer</a>
+      <ytd-channel-name><yt-formatted-string id="text"><a href="/@movies">Movies</a></yt-formatted-string></ytd-channel-name>
+    </ytd-video-renderer>
+
+    <!-- 4b. search: clean title, description snippet mentions a casino -->
+    <ytd-video-renderer id="t4b" data-expect="hidden">
+      <a id="thumbnail" href="/watch?v=aaaaaaaaa4b"></a>
+      <a id="video-title" title="My weekend vlog" href="/watch?v=aaaaaaaaa4b">My weekend vlog</a>
+      <ytd-channel-name><yt-formatted-string id="text"><a href="/@vlogger">Vlogger</a></yt-formatted-string></ytd-channel-name>
+      <div class="metadata-snippet-container"><yt-formatted-string class="metadata-snippet-text">We spent the night at the casino and I gambled a bit</yt-formatted-string></div>
+    </ytd-video-renderer>
+
+    <!-- 5. sidebar: classic compact renderer, channel name without link; weak + weak across title and channel -->
+    <ytd-compact-video-renderer id="t5" data-expect="hidden">
+      <a href="/watch?v=aaaaaaaaaa5"><span id="video-title">Huge jackpot tonight</span></a>
+      <ytd-channel-name><yt-formatted-string id="text">Casino Daddy</yt-formatted-string></ytd-channel-name>
+    </ytd-compact-video-renderer>
+
+    <!-- 6. shorts lockup without channel info -->
+    <ytm-shorts-lockup-view-model-v2 id="t6" data-expect="hidden">
+      <a class="shortsLockupViewModelHostEndpoint" href="/shorts/bbbbbbbbbb6" title="Казино онлайн занос 🎰"></a>
+      <h3 class="shortsLockupViewModelHostMetadataTitle"><a href="/shorts/bbbbbbbbbb6"><span>Казино онлайн занос 🎰</span></a></h3>
+    </ytm-shorts-lockup-view-model-v2>
+
+    <!-- 11. short with a harmless title from a channel caught by the channel-name rule.
+         The card has no channel info; the extension must look it up (/oembed). -->
+    <ytm-shorts-lockup-view-model-v2 id="t11" data-expect="hidden">
+      <a class="shortsLockupViewModelHostEndpoint" href="/shorts/ccccccccc11" title="My best day ever"></a>
+      <h3 class="shortsLockupViewModelHostMetadataTitle"><a href="/shorts/ccccccccc11"><span>My best day ever</span></a></h3>
+    </ytm-shorts-lockup-view-model-v2>
+
+    <!-- 12. short from a harmless channel: must end up visible, not stuck as pending -->
+    <ytm-shorts-lockup-view-model-v2 id="t12" data-expect="shown">
+      <a class="shortsLockupViewModelHostEndpoint" href="/shorts/ccccccccc12" title="Easy pasta in 30 seconds"></a>
+      <h3 class="shortsLockupViewModelHostMetadataTitle"><a href="/shorts/ccccccccc12"><span>Easy pasta in 30 seconds</span></a></h3>
+    </ytm-shorts-lockup-view-model-v2>
+
+    <!-- 13. short whose lookup fails (404): must end up visible -->
+    <ytm-shorts-lockup-view-model-v2 id="t13" data-expect="shown">
+      <a class="shortsLockupViewModelHostEndpoint" href="/shorts/ccccccccc13" title="Sunset timelapse"></a>
+      <h3 class="shortsLockupViewModelHostMetadataTitle"><a href="/shorts/ccccccccc13"><span>Sunset timelapse</span></a></h3>
+    </ytm-shorts-lockup-view-model-v2>
+
+    <!-- 7. recycled card: clean at first, gambling title later -->
+    <ytd-rich-item-renderer id="t7" data-expect="hidden">
+      <yt-lockup-view-model>
+        <a href="/watch?v=aaaaaaaaaa7"></a>
+        <h3><a class="yt-lockup-metadata-view-model__title" href="/watch?v=aaaaaaaaaa7"><span id="t7-title">Cooking pasta at home</span></a></h3>
+      </yt-lockup-view-model>
+    </ytd-rich-item-renderer>
+
+    <!-- 8. recycled card: gambling at first, clean later (must be un-hidden) -->
+    <ytd-rich-item-renderer id="t8" data-expect="shown">
+      <yt-lockup-view-model>
+        <a id="t8-link" href="/watch?v=aaaaaaaaaa8"></a>
+        <h3><a class="yt-lockup-metadata-view-model__title" href="/watch?v=aaaaaaaaaa8"><span id="t8-title">Online casino free spins</span></a></h3>
+      </yt-lockup-view-model>
+    </ytd-rich-item-renderer>
+
+    <!-- 9. end-screen tile -->
+    <div id="movie_player">
+      <a id="t9" class="ytp-videowall-still" href="/watch?v=aaaaaaaaaa9" data-expect="hidden">
+        <span class="ytp-videowall-still-info-title">Sportwetten Tipps für heute</span>
+        <span class="ytp-videowall-still-info-author">Wettkönig</span>
+      </a>
+    </div>
+
+    <div id="late"></div>
+    <img src="/slow.png" alt="" />
+
+    <script>
+      setTimeout(() => {
+        document.getElementById('t7-title').textContent = 'ROOBET slots big win';
+        document.getElementById('t8-title').textContent = 'Gardening for beginners';
+        document.getElementById('t8-link').setAttribute('href', '/watch?v=aaaaaaaaa88');
+      }, 600);
+      // 10. card added later, populated in two steps like YouTube does
+      setTimeout(() => {
+        const card = document.createElement('ytd-rich-item-renderer');
+        card.id = 't10';
+        card.dataset.expect = 'hidden';
+        document.getElementById('late').append(card);
+        setTimeout(() => {
+          card.innerHTML =
+            '<yt-lockup-view-model><a href="/watch?v=aaaaaaaaa10"></a><h3><a class="yt-lockup-metadata-view-model__title" href="/watch?v=aaaaaaaaa10"><span>Kasyno online – darmowe spiny</span></a></h3></yt-lockup-view-model>';
+        }, 200);
+      }, 800);
+    </script>
+  </body>
+</html>

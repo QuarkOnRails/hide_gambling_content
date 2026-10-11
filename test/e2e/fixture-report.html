@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Report fixture - YouTube</title>
+    <script>
+      // What YouTube's page provides: config, the session cookie, and data on
+      // each card element (set below, in the page's own JS world).
+      const loggedIn = !new URLSearchParams(location.search).has('loggedOut');
+      const config = {
+        LOGGED_IN: loggedIn,
+        INNERTUBE_CONTEXT: { client: { clientName: 'WEB', clientVersion: '2.20260101.00.00' } },
+        INNERTUBE_CONTEXT_CLIENT_NAME: 1,
+        INNERTUBE_CLIENT_VERSION: '2.20260101.00.00',
+        SESSION_INDEX: 0,
+        USER_SESSION_ID: 'e2e-user',
+      };
+      window.ytcfg = { data_: config, get: (k) => config[k] };
+      if (loggedIn) document.cookie = 'SAPISID=e2e-sid; path=/; Secure';
+    </script>
+  </head>
+  <body>
+    <!-- Expected requests are asserted in run.js. -->
+
+    <!-- r1: channel the user blocked; harmless title -->
+    <ytd-rich-item-renderer id="r1">
+      <yt-lockup-view-model>
+        <a href="/watch?v=rrrrrrrrrr1"></a>
+        <h3><a class="yt-lockup-metadata-view-model__title" href="/watch?v=rrrrrrrrrr1"><span>My day at the zoo</span></a></h3>
+        <span class="yt-content-metadata-view-model__metadata-text"><a href="/@zoodiary">Zoo Diary</a></span>
+      </yt-lockup-view-model>
+    </ytd-rich-item-renderer>
+
+    <!-- r2: caught by title keywords -->
+    <ytd-rich-item-renderer id="r2">
+      <yt-lockup-view-model>
+        <a href="/watch?v=rrrrrrrrrr2"></a>
+        <h3><a class="yt-lockup-metadata-view-model__title" href="/watch?v=rrrrrrrrrr2"><span>Online casino free spins tonight</span></a></h3>
+        <span class="yt-content-metadata-view-model__metadata-text"><a href="/@randomguy">Random Guy</a></span>
+      </yt-lockup-view-model>
+    </ytd-rich-item-renderer>
+
+    <!-- r3 and r7: same channel, caught by the channel-name rule; older data layout -->
+    <ytd-rich-item-renderer id="r3">
+      <yt-lockup-view-model>
+        <a href="/watch?v=rrrrrrrrrr3"></a>
+        <h3><a class="yt-lockup-metadata-view-model__title" href="/watch?v=rrrrrrrrrr3"><span>Daily vlog</span></a></h3>
+        <span class="yt-content-metadata-view-model__metadata-text"><a href="/@jackpotjudo">Jackpot Judo</a></span>
+      </yt-lockup-view-model>
+    </ytd-rich-item-renderer>
+    <ytd-rich-item-renderer id="r7">
+      <yt-lockup-view-model>
+        <a href="/watch?v=rrrrrrrrrr7"></a>
+        <h3><a class="yt-lockup-metadata-view-model__title" href="/watch?v=rrrrrrrrrr7"><span>Another vlog</span></a></h3>
+        <span class="yt-content-metadata-view-model__metadata-text"><a href="/@jackpotjudo">Jackpot Judo</a></span>
+      </yt-lockup-view-model>
+    </ytd-rich-item-renderer>
+
+    <!-- r4: gambling title, but the channel is on the never-hide list -->
+    <ytd-rich-item-renderer id="r4">
+      <yt-lockup-view-model>
+        <a href="/watch?v=rrrrrrrrrr4"></a>
+        <h3><a class="yt-lockup-metadata-view-model__title" href="/watch?v=rrrrrrrrrr4"><span>Online casino regulation explained</span></a></h3>
+        <span class="yt-content-metadata-view-model__metadata-text"><a href="/@newsdesk">News Desk</a></span>
+      </yt-lockup-view-model>
+    </ytd-rich-item-renderer>
+
+    <!-- r5: harmless -->
+    <ytd-rich-item-renderer id="r5">
+      <yt-lockup-view-model>
+        <a href="/watch?v=rrrrrrrrrr5"></a>
+        <h3><a class="yt-lockup-metadata-view-model__title" href="/watch?v=rrrrrrrrrr5"><span>Ruby on Rails tutorial</span></a></h3>
+        <span class="yt-content-metadata-view-model__metadata-text"><a href="/@railsdev">Rails Dev</a></span>
+      </yt-lockup-view-model>
+    </ytd-rich-item-renderer>
+
+    <!-- r6: recycled card: the markup shows one video, its data already another -->
+    <ytd-rich-item-renderer id="r6">
+      <yt-lockup-view-model>
+        <a href="/watch?v=rrrrrrrrrr6"></a>
+        <h3><a class="yt-lockup-metadata-view-model__title" href="/watch?v=rrrrrrrrrr6"><span>Casino bonus hunt</span></a></h3>
+        <span class="yt-content-metadata-view-model__metadata-text"><a href="/@randomguytwo">Random Guy Two</a></span>
+      </yt-lockup-view-model>
+    </ytd-rich-item-renderer>
+
+    <img src="/slow.png?ms=12000" alt="" />
+
+    <script>
+      // Real 2026 layout: "Not interested" is labelled HIDE, each entry names its video.
+      function item(icon, token, videoId) {
+        return {
+          listItemViewModel: {
+            leadingImage: { sources: [{ clientResource: { imageName: icon } }] },
+            rendererContext: { commandContext: { onTap: { innertubeCommand: { feedbackEndpoint: { feedbackToken: token, contentId: videoId } } } } },
+          },
+        };
+      }
+      function lockup(videoId, n) {
+        const items = [item('HIDE', 'NI-' + n, videoId), item('REMOVE', 'CH-' + n, videoId)];
+        return {
+          content: {
+            lockupViewModel: {
+              contentId: videoId,
+              metadata: { lockupMetadataViewModel: { menuButton: { buttonViewModel: { onTap: { innertubeCommand: { showSheetCommand: { panelLoadingStrategy: { inlineContent: { sheetViewModel: { content: { listViewModel: { listItems: items } } } } } } } } } } } },
+            },
+          },
+        };
+      }
+      // Older layout: entries do not name their video.
+      function oldLayout(videoId, n) {
+        return {
+          content: {
+            videoRenderer: {
+              videoId,
+              menu: {
+                menuRenderer: {
+                  items: [
+                    { menuServiceItemRenderer: { icon: { iconType: 'NOT_INTERESTED' }, serviceEndpoint: { feedbackEndpoint: { feedbackToken: 'NI-' + n } } } },
+                    { menuServiceItemRenderer: { icon: { iconType: 'REMOVE' }, serviceEndpoint: { feedbackEndpoint: { feedbackToken: 'CH-' + n } } } },
+                  ],
+                },
+              },
+            },
+          },
+        };
+      }
+      const $ = (id) => document.getElementById(id);
+      $('r1').data = lockup('rrrrrrrrrr1', 'r1');
+      $('r2').data = lockup('rrrrrrrrrr2', 'r2');
+      $('r3').data = oldLayout('rrrrrrrrrr3', 'r3');
+      $('r7').data = oldLayout('rrrrrrrrrr7', 'r7');
+      $('r4').data = lockup('rrrrrrrrrr4', 'r4');
+      $('r5').data = lockup('rrrrrrrrrr5', 'r5');
+      $('r6').data = lockup('xxxxxxxxxx6', 'r6');
+    </script>
+  </body>
+</html>

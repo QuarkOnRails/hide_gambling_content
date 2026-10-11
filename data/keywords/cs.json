@@ -1,0 +1,42 @@
+{
+  "language": "cs",
+  "name": "Čeština",
+  "strong": [
+    "online kasino|online kasina|online casina|kasino online|živé kasino|live kasino",
+    "výherní automaty|výherní automat|hrací automaty|hrací automat|herní automaty|online automaty",
+    "volná otočení|volné otočky|volných otočení|free spiny|free spinů",
+    "bonus bez vkladu|kasino bonus|casino bonus|vstupní bonus",
+    "nákup bonusu",
+    "největší jackpot|obří jackpot|rekordní jackpot|mega jackpot|vyhrál jackpot|vyhrála jackpot|vyhráli jackpot|výhra jackpotu",
+    "kurzové sázky|kurzové sázení|sportovní sázky|sportovní sázení|sázení na sport",
+    "tipy na sázení|sázkařské tipy|tiket dne|sázkový tiket|ako tiket",
+    "strategie na ruletu|ruleta strategie",
+    "hazardní hry|hazardních her",
+    "kasino|kasina|kasinu|kasinem|kasinech|casino|casina",
+    "gambling|gambler|gambleři|gamblerství"
+  ],
+  "weak": [
+    "automaty|automatech|automatů",
+    "sloty|slot|slotů|slotech",
+    "ruleta|ruletu|ruletě|ruletou|rulety",
+    "jackpot|jackpoty",
+    "výhra|výhry|výhru|výher|výhrou|vyhrál|vyhráli",
+    "sázky|sázka|sázku|sázek|sázení|sázkař|sázkaři",
+    "sázková kancelář|sázkové kanceláře|sázkovka|sázkovky",
+    "hazard|hazardu|hazardem|hazardní|hazardních",
+    "poker|pokeru",
+    "blackjack",
+    "loterie|loterii|stírací los*",
+    "bonus|bonusy",
+    "otočky|zatočení|spiny|spinů",
+    "herna|herny|herně"
+  ],
+  "exceptions": [
+    "ruská ruleta|ruskou ruletu|ruské ruletě",
+    "casino royale",
+    "poker face",
+    "eden hazard|thorgan hazard",
+    "fortuna liga|fortuna národní liga",
+    "automat na kávu|kávový automat|kávové automaty|prodejní automat*|nápojový automat*|výdejní automat*|jízdenkový automat*"
+  ]
+}

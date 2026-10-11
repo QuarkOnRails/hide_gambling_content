@@ -1,0 +1,65 @@
+{
+  "manifest_version": 3,
+  "name": "Hide Gambling Content",
+  "version": "0.3.0",
+  "description": "Hides gambling videos, streams and channels on YouTube using multi-language keywords and a channel blocklist.",
+  "minimum_chrome_version": "111",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "Hide Gambling Content",
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png"
+    }
+  },
+  "options_ui": {
+    "page": "src/options/options.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*", "*://m.youtube.com/*"],
+      "js": [
+        "src/api.js",
+        "src/normalize.js",
+        "src/matcher.js",
+        "src/selectors.js",
+        "src/extract.js",
+        "src/store.js",
+        "src/content.js"
+      ],
+      "css": ["src/content.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["src/page.js"],
+      "world": "MAIN",
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["data/*.json", "data/keywords/*.json"],
+      "matches": ["*://www.youtube.com/*", "*://m.youtube.com/*"]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "restrict@personal.local",
+      "strict_min_version": "128.0",
+      "data_collection_permissions": { "required": ["none"] }
+    },
+    "gecko_android": {
+      "strict_min_version": "128.0"
+    }
+  }
+}

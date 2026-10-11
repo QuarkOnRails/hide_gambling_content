@@ -1,0 +1,35 @@
+/* Restrict – injected into youtube.com */
+
+[data-restrict='hidden'] {
+  display: none !important;
+}
+
+/* Waiting for a channel lookup: keeps its place in the grid, shows nothing. */
+[data-restrict='pending'] {
+  visibility: hidden !important;
+}
+
+/* Opened video that matches: plain black cover, no explanation. */
+.restrict-guard {
+  position: absolute;
+  inset: 0;
+  z-index: 2147483000;
+  background: #000;
+}
+.restrict-guard__show {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  appearance: none;
+  border: 0;
+  border-radius: 14px;
+  padding: 5px 12px;
+  background: transparent;
+  color: #4a4a4f;
+  font: 500 12px/1.4 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  cursor: pointer;
+}
+.restrict-guard__show:hover {
+  background: #1c1c1f;
+  color: #d0d0d5;
+}

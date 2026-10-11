@@ -1,0 +1,34 @@
+{
+  "language": "tr",
+  "name": "Türkçe",
+  "strong": [
+    "online casino|online kazino|canlı casino|canlı kazino|casino sitesi|casino siteleri",
+    "slot oyunları|slot oyunu|slot oyna*|slot yayını|slot vurgun*",
+    "bedava dönüş|bedava spin|ücretsiz dönüş|free spin",
+    "yatırımsız bonus|hoşgeldin bonusu|casino bonusu|bonus satın al*",
+    "iddaa|iddaa tahmin*",
+    "banko kupon*|banko maç*|banko tahmin*|kupon tahminleri|günün kuponu|maç tahminleri",
+    "bahis siteleri|bahis sitesi|canlı bahis|spor bahisleri",
+    "şans oyunları",
+    "casino|kazino"
+  ],
+  "weak": [
+    "gazino",
+    "slot|slotlar",
+    "rulet",
+    "jackpot|büyük ikramiye|ikramiye",
+    "kazanç|kazandım|kazandık|vurgun",
+    "bahis|bahisler|bahisçi",
+    "kumar*",
+    "poker",
+    "blackjack",
+    "piyango|milli piyango|sayısal loto|şans topu|kazı kazan",
+    "bonus",
+    "kupon|kuponlar"
+  ],
+  "exceptions": [
+    "rus ruleti",
+    "casino royale",
+    "poker face"
+  ]
+}

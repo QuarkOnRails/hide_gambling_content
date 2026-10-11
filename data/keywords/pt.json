@@ -1,0 +1,35 @@
+{
+  "language": "pt",
+  "name": "Português",
+  "strong": [
+    "cassino online|cassinos online|casino online|cassino ao vivo|casino ao vivo",
+    "caça níqueis|caça níquel",
+    "rodadas grátis|giros grátis",
+    "bônus sem depósito|bônus de cassino|bónus de casino",
+    "compra de bônus|compra de bónus",
+    "apostas esportivas|apostas desportivas|aposta esportiva|casa de apostas|casas de apostas",
+    "palpites de futebol|palpites do dia|palpites de hoje",
+    "jogos de azar|jogo de azar",
+    "jogo do tigrinho|jogo do tigre|jogo do aviãozinho",
+    "slots pagando|slot pagando|horário pagante|horários pagantes|plataforma pagando|plataforma nova pagando",
+    "alavancagem de banca|alavancando banca|banca baixa",
+    "cassino|cassinos|casino|casinos"
+  ],
+  "weak": [
+    "slot|slots",
+    "roleta",
+    "jackpot",
+    "ganhei|ganhos|ganhamos",
+    "apostas|aposta|apostar|apostando|apostador|apostadores|apostei",
+    "pôquer|poker",
+    "blackjack",
+    "loteria|mega sena|lotofácil|raspadinha|raspadinhas",
+    "bônus|bónus|bonus",
+    "ludopatia"
+  ],
+  "exceptions": [
+    "roleta russa",
+    "casino royale",
+    "poker face"
+  ]
+}

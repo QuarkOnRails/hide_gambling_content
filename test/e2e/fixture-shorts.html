@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>YouTube</title>
+  </head>
+  <body>
+    <!-- Shorts player. The page itself says nothing useful about the video
+         (stale title, no channel): the extension has to rely on the lookup. -->
+    <div id="shorts-player" style="width: 360px; height: 640px"><video></video></div>
+    <!-- Left over from a watch page opened earlier: YouTube keeps it in the DOM,
+         hidden. Its owner must not be taken for the owner of the Short. -->
+    <ytd-watch-flexy style="display: none">
+      <div id="movie_player" style="width: 640px; height: 360px"><video></video></div>
+      <ytd-watch-metadata>
+        <ytd-video-owner-renderer>
+          <ytd-channel-name><yt-formatted-string id="text"><a href="/@TheCasinoKing">The Casino King</a></yt-formatted-string></ytd-channel-name>
+        </ytd-video-owner-renderer>
+      </ytd-watch-metadata>
+    </ytd-watch-flexy>
+    <div id="navigation-button-up"><button id="up">up</button></div>
+    <div id="navigation-button-down"><button id="down">down</button></div>
+    <img src="/slow.png" alt="" />
+    <script>
+      document.getElementById('down').addEventListener('click', () => {
+        document.body.setAttribute('data-skipped', 'down');
+      });
+      document.getElementById('up').addEventListener('click', () => {
+        document.body.setAttribute('data-skipped', 'up');
+      });
+    </script>
+  </body>
+</html>

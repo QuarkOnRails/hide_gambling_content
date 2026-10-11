@@ -1,0 +1,36 @@
+{
+  "language": "de",
+  "name": "Deutsch",
+  "strong": [
+    "online casino|online casinos|online kasino|onlinecasino|onlinecasinos|live casino",
+    "spielautomat|spielautomaten|geldspielautomat*|spielothek|spielotheken|spielhalle|spielhallen",
+    "freispiele|freispiel|freispielen",
+    "bonus ohne einzahlung|casino bonus|willkommensbonus",
+    "bonus kauf|bonuskauf|bonuskäufe",
+    "sportwetten|sportwette",
+    "wett tipps|wetttipps|wett tipp|wetttipp|wettschein|wettscheine",
+    "glücksspiel|glücksspiele|gluecksspiel|gluecksspiele",
+    "slot stream|casino stream",
+    "roulette strategie|roulette system",
+    "casino|casinos|kasino|spielbank|spielbanken"
+  ],
+  "weak": [
+    "slot|slots",
+    "automat|automaten",
+    "roulette",
+    "jackpot|jackpots",
+    "gewinn|gewinne|mega gewinn|riesen gewinn|rekordgewinn",
+    "wetten|wette|wettanbieter|buchmacher",
+    "poker",
+    "blackjack",
+    "lotto|lotterie|rubbellos|rubbellose",
+    "bonus",
+    "spielsucht|spielsüchtig"
+  ],
+  "exceptions": [
+    "wetten dass",
+    "russisch roulette|russisches roulette",
+    "casino royale",
+    "poker face"
+  ]
+}

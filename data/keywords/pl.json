@@ -1,0 +1,34 @@
+{
+  "language": "pl",
+  "name": "Polski",
+  "strong": [
+    "kasyno online|kasyna online|kasyno internetowe|kasyna internetowe|kasyno na żywo",
+    "automaty do gier|automaty online|automaty hazardowe|maszyny hazardowe|jednoręki bandyta",
+    "gry hazardowe|gier hazardowych",
+    "darmowe spiny|darmowe obroty|free spiny|darmowych spinów",
+    "bonus bez depozytu|bonus kasynowy|kasyno bonus|bonus powitalny",
+    "zakup bonusu",
+    "zakłady bukmacherskie|zakłady sportowe|typy bukmacherskie|typy dnia|kupon dnia",
+    "bukmacher|bukmacherzy|bukmachera|bukmacherów",
+    "kasyno|kasyna|kasynie|kasynem|kasynach|casino"
+  ],
+  "weak": [
+    "automaty|automatach|automatów",
+    "sloty|slot|slotach|slotów",
+    "ruletka|ruletkę|ruletce|ruletki",
+    "jackpot",
+    "wygrana|wygrane|wygraną|wygranej|wygrałem|wygrał",
+    "zakłady|obstawianie|obstawiam|obstawiamy",
+    "hazard|hazardu|hazardzista|hazardziści|hazardowe",
+    "poker|pokera|pokerze",
+    "blackjack",
+    "lotto|loteria|loterii|zdrapki|zdrapka|zdrapek",
+    "bonus|bonusy"
+  ],
+  "exceptions": [
+    "rosyjska ruletka|rosyjską ruletkę",
+    "casino royale",
+    "poker face",
+    "eden hazard"
+  ]
+}

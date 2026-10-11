@@ -1,0 +1,752 @@
+{
+ "note": "Structure of real YouTube home-feed cards (ytd-rich-item-renderer.data), captured 2026-10-11. Ids are fake, report codes placeholders, all other text removed.",
+ "video": {
+  "content": {
+   "lockupViewModel": {
+    "contentImage": {
+     "thumbnailViewModel": {
+      "overlays": [
+       {
+        "thumbnailHoverOverlayToggleActionsViewModel": {
+         "buttons": [
+          {
+           "toggleButtonViewModel": {
+            "defaultButtonViewModel": {
+             "buttonViewModel": {
+              "onTap": {
+               "innertubeCommand": {
+                "signalServiceEndpoint": {
+                 "actions": [
+                  {
+                   "addToPlaylistCommand": {
+                    "videoId": "vid0xxxxxxx",
+                    "videoCommand": {
+                     "watchEndpoint": {
+                      "videoId": "vid0xxxxxxx"
+                     }
+                    }
+                   }
+                  }
+                 ]
+                }
+               }
+              }
+             }
+            }
+           }
+          }
+         ]
+        }
+       }
+      ]
+     }
+    },
+    "metadata": {
+     "lockupMetadataViewModel": {
+      "menuButton": {
+       "buttonViewModel": {
+        "onTap": {
+         "innertubeCommand": {
+          "showSheetCommand": {
+           "panelLoadingStrategy": {
+            "inlineContent": {
+             "sheetViewModel": {
+              "content": {
+               "listViewModel": {
+                "listItems": [
+                 {
+                  "listItemViewModel": {
+                   "leadingImage": {
+                    "sources": [
+                     {
+                      "clientResource": {
+                       "imageName": "ADD_TO_QUEUE_TAIL"
+                      }
+                     }
+                    ]
+                   },
+                   "rendererContext": {
+                    "commandContext": {
+                     "onTap": {
+                      "innertubeCommand": {
+                       "signalServiceEndpoint": {
+                        "actions": [
+                         {
+                          "addToPlaylistCommand": {
+                           "videoId": "vid0xxxxxxx",
+                           "videoCommand": {
+                            "watchEndpoint": {
+                             "videoId": "vid0xxxxxxx"
+                            }
+                           }
+                          }
+                         }
+                        ]
+                       }
+                      }
+                     }
+                    }
+                   }
+                  }
+                 },
+                 {
+                  "listItemViewModel": {
+                   "leadingImage": {
+                    "sources": [
+                     {
+                      "clientResource": {
+                       "imageName": "WATCH_LATER"
+                      }
+                     }
+                    ]
+                   }
+                  }
+                 },
+                 {
+                  "listItemViewModel": {
+                   "leadingImage": {
+                    "sources": [
+                     {
+                      "clientResource": {
+                       "imageName": "BOOKMARK_BORDER"
+                      }
+                     }
+                    ]
+                   }
+                  }
+                 },
+                 {
+                  "downloadListItemViewModel": {
+                   "rendererContext": {
+                    "commandContext": {
+                     "onTap": {
+                      "innertubeCommand": {
+                       "offlineVideoEndpoint": {
+                        "videoId": "vid0xxxxxxx",
+                        "onAddCommand": {
+                         "getDownloadActionCommand": {
+                          "videoId": "vid0xxxxxxx"
+                         }
+                        }
+                       }
+                      }
+                     }
+                    }
+                   }
+                  }
+                 },
+                 {
+                  "listItemViewModel": {
+                   "leadingImage": {
+                    "sources": [
+                     {
+                      "clientResource": {
+                       "imageName": "SHARE"
+                      }
+                     }
+                    ]
+                   }
+                  }
+                 },
+                 {
+                  "listItemViewModel": {
+                   "leadingImage": {
+                    "sources": [
+                     {
+                      "clientResource": {
+                       "imageName": "HIDE"
+                      }
+                     }
+                    ]
+                   },
+                   "rendererContext": {
+                    "commandContext": {
+                     "onTap": {
+                      "innertubeCommand": {
+                       "feedbackEndpoint": {
+                        "feedbackToken": "TOKEN-vid-1",
+                        "actions": [
+                         {
+                          "replaceEnclosingAction": {
+                           "item": {
+                            "notificationMultiActionRenderer": {
+                             "buttons": [
+                              {
+                               "buttonRenderer": {
+                                "serviceEndpoint": {
+                                 "undoFeedbackEndpoint": {
+                                  "contentId": "vid0xxxxxxx"
+                                 }
+                                }
+                               }
+                              }
+                             ]
+                            }
+                           }
+                          }
+                         }
+                        ],
+                        "contentId": "vid0xxxxxxx"
+                       }
+                      }
+                     }
+                    }
+                   }
+                  }
+                 },
+                 {
+                  "listItemViewModel": {
+                   "leadingImage": {
+                    "sources": [
+                     {
+                      "clientResource": {
+                       "imageName": "REMOVE"
+                      }
+                     }
+                    ]
+                   },
+                   "rendererContext": {
+                    "commandContext": {
+                     "onTap": {
+                      "innertubeCommand": {
+                       "feedbackEndpoint": {
+                        "feedbackToken": "TOKEN-vid-2",
+                        "actions": [
+                         {
+                          "replaceEnclosingAction": {
+                           "item": {
+                            "notificationMultiActionRenderer": {
+                             "buttons": [
+                              {
+                               "buttonRenderer": {
+                                "serviceEndpoint": {
+                                 "undoFeedbackEndpoint": {
+                                  "contentId": "vid0xxxxxxx"
+                                 }
+                                }
+                               }
+                              }
+                             ]
+                            }
+                           }
+                          }
+                         }
+                        ],
+                        "contentId": "vid0xxxxxxx"
+                       }
+                      }
+                     }
+                    }
+                   }
+                  }
+                 },
+                 {
+                  "listItemViewModel": {
+                   "leadingImage": {
+                    "sources": [
+                     {
+                      "clientResource": {
+                       "imageName": "FLAG"
+                      }
+                     }
+                    ]
+                   }
+                  }
+                 }
+                ]
+               }
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    },
+    "contentId": "vid0xxxxxxx",
+    "contentType": "LOCKUP_CONTENT_TYPE_VIDEO",
+    "itemPlayback": {
+     "inlinePlayerData": {
+      "onSelect": {
+       "innertubeCommand": {
+        "watchEndpoint": {
+         "videoId": "vid0xxxxxxx"
+        }
+       }
+      },
+      "onVisible": {
+       "innertubeCommand": {
+        "watchEndpoint": {
+         "videoId": "vid0xxxxxxx"
+        }
+       }
+      }
+     }
+    },
+    "rendererContext": {
+     "commandContext": {
+      "onTap": {
+       "innertubeCommand": {
+        "watchEndpoint": {
+         "videoId": "vid0xxxxxxx"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "videoOfLiveChannel": {
+  "content": {
+   "lockupViewModel": {
+    "contentImage": {
+     "thumbnailViewModel": {
+      "overlays": [
+       {
+        "thumbnailHoverOverlayToggleActionsViewModel": {
+         "buttons": [
+          {
+           "toggleButtonViewModel": {
+            "defaultButtonViewModel": {
+             "buttonViewModel": {
+              "onTap": {
+               "innertubeCommand": {
+                "signalServiceEndpoint": {
+                 "actions": [
+                  {
+                   "addToPlaylistCommand": {
+                    "videoId": "liv0xxxxxxx",
+                    "videoCommand": {
+                     "watchEndpoint": {
+                      "videoId": "liv0xxxxxxx"
+                     }
+                    }
+                   }
+                  }
+                 ]
+                }
+               }
+              }
+             }
+            }
+           }
+          }
+         ]
+        }
+       }
+      ]
+     }
+    },
+    "metadata": {
+     "lockupMetadataViewModel": {
+      "image": {
+       "decoratedAvatarViewModel": {
+        "rendererContext": {
+         "commandContext": {
+          "onTap": {
+           "innertubeCommand": {
+            "watchEndpoint": {
+             "videoId": "liv1xxxxxxx"
+            }
+           }
+          }
+         }
+        }
+       }
+      },
+      "menuButton": {
+       "buttonViewModel": {
+        "onTap": {
+         "innertubeCommand": {
+          "showSheetCommand": {
+           "panelLoadingStrategy": {
+            "inlineContent": {
+             "sheetViewModel": {
+              "content": {
+               "listViewModel": {
+                "listItems": [
+                 {
+                  "listItemViewModel": {
+                   "leadingImage": {
+                    "sources": [
+                     {
+                      "clientResource": {
+                       "imageName": "ADD_TO_QUEUE_TAIL"
+                      }
+                     }
+                    ]
+                   },
+                   "rendererContext": {
+                    "commandContext": {
+                     "onTap": {
+                      "innertubeCommand": {
+                       "signalServiceEndpoint": {
+                        "actions": [
+                         {
+                          "addToPlaylistCommand": {
+                           "videoId": "liv0xxxxxxx",
+                           "videoCommand": {
+                            "watchEndpoint": {
+                             "videoId": "liv0xxxxxxx"
+                            }
+                           }
+                          }
+                         }
+                        ]
+                       }
+                      }
+                     }
+                    }
+                   }
+                  }
+                 },
+                 {
+                  "listItemViewModel": {
+                   "leadingImage": {
+                    "sources": [
+                     {
+                      "clientResource": {
+                       "imageName": "WATCH_LATER"
+                      }
+                     }
+                    ]
+                   }
+                  }
+                 },
+                 {
+                  "listItemViewModel": {
+                   "leadingImage": {
+                    "sources": [
+                     {
+                      "clientResource": {
+                       "imageName": "BOOKMARK_BORDER"
+                      }
+                     }
+                    ]
+                   }
+                  }
+                 },
+                 {
+                  "downloadListItemViewModel": {
+                   "rendererContext": {
+                    "commandContext": {
+                     "onTap": {
+                      "innertubeCommand": {
+                       "offlineVideoEndpoint": {
+                        "videoId": "liv0xxxxxxx",
+                        "onAddCommand": {
+                         "getDownloadActionCommand": {
+                          "videoId": "liv0xxxxxxx"
+                         }
+                        }
+                       }
+                      }
+                     }
+                    }
+                   }
+                  }
+                 },
+                 {
+                  "listItemViewModel": {
+                   "leadingImage": {
+                    "sources": [
+                     {
+                      "clientResource": {
+                       "imageName": "SHARE"
+                      }
+                     }
+                    ]
+                   }
+                  }
+                 },
+                 {
+                  "listItemViewModel": {
+                   "leadingImage": {
+                    "sources": [
+                     {
+                      "clientResource": {
+                       "imageName": "HIDE"
+                      }
+                     }
+                    ]
+                   },
+                   "rendererContext": {
+                    "commandContext": {
+                     "onTap": {
+                      "innertubeCommand": {
+                       "feedbackEndpoint": {
+                        "feedbackToken": "TOKEN-liv-1",
+                        "actions": [
+                         {
+                          "replaceEnclosingAction": {
+                           "item": {
+                            "notificationMultiActionRenderer": {
+                             "buttons": [
+                              {
+                               "buttonRenderer": {
+                                "serviceEndpoint": {
+                                 "undoFeedbackEndpoint": {
+                                  "contentId": "liv0xxxxxxx"
+                                 }
+                                }
+                               }
+                              }
+                             ]
+                            }
+                           }
+                          }
+                         }
+                        ],
+                        "contentId": "liv0xxxxxxx"
+                       }
+                      }
+                     }
+                    }
+                   }
+                  }
+                 },
+                 {
+                  "listItemViewModel": {
+                   "leadingImage": {
+                    "sources": [
+                     {
+                      "clientResource": {
+                       "imageName": "REMOVE"
+                      }
+                     }
+                    ]
+                   },
+                   "rendererContext": {
+                    "commandContext": {
+                     "onTap": {
+                      "innertubeCommand": {
+                       "feedbackEndpoint": {
+                        "feedbackToken": "TOKEN-liv-2",
+                        "actions": [
+                         {
+                          "replaceEnclosingAction": {
+                           "item": {
+                            "notificationMultiActionRenderer": {
+                             "buttons": [
+                              {
+                               "buttonRenderer": {
+                                "serviceEndpoint": {
+                                 "undoFeedbackEndpoint": {
+                                  "contentId": "liv0xxxxxxx"
+                                 }
+                                }
+                               }
+                              }
+                             ]
+                            }
+                           }
+                          }
+                         }
+                        ],
+                        "contentId": "liv0xxxxxxx"
+                       }
+                      }
+                     }
+                    }
+                   }
+                  }
+                 },
+                 {
+                  "listItemViewModel": {
+                   "leadingImage": {
+                    "sources": [
+                     {
+                      "clientResource": {
+                       "imageName": "FLAG"
+                      }
+                     }
+                    ]
+                   }
+                  }
+                 }
+                ]
+               }
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    },
+    "contentId": "liv0xxxxxxx",
+    "contentType": "LOCKUP_CONTENT_TYPE_VIDEO",
+    "itemPlayback": {
+     "inlinePlayerData": {
+      "onSelect": {
+       "innertubeCommand": {
+        "watchEndpoint": {
+         "videoId": "liv0xxxxxxx"
+        }
+       }
+      },
+      "onVisible": {
+       "innertubeCommand": {
+        "watchEndpoint": {
+         "videoId": "liv0xxxxxxx"
+        }
+       }
+      }
+     }
+    },
+    "rendererContext": {
+     "commandContext": {
+      "onTap": {
+       "innertubeCommand": {
+        "watchEndpoint": {
+         "videoId": "liv0xxxxxxx"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "short": {
+  "content": {
+   "shortsLockupViewModel": {
+    "onTap": {
+     "innertubeCommand": {
+      "reelWatchEndpoint": {
+       "videoId": "sho0xxxxxxx"
+      }
+     }
+    },
+    "inlinePlayerData": {
+     "onVisible": {
+      "innertubeCommand": {
+       "watchEndpoint": {
+        "videoId": "sho0xxxxxxx"
+       }
+      }
+     }
+    },
+    "menuOnTap": {
+     "innertubeCommand": {
+      "showSheetCommand": {
+       "panelLoadingStrategy": {
+        "inlineContent": {
+         "sheetViewModel": {
+          "content": {
+           "listViewModel": {
+            "listItems": [
+             {
+              "listItemViewModel": {
+               "leadingImage": {
+                "sources": [
+                 {
+                  "clientResource": {
+                   "imageName": "ADD_TO_QUEUE_TAIL"
+                  }
+                 }
+                ]
+               },
+               "rendererContext": {
+                "commandContext": {
+                 "onTap": {
+                  "innertubeCommand": {
+                   "signalServiceEndpoint": {
+                    "actions": [
+                     {
+                      "addToPlaylistCommand": {
+                       "videoId": "sho0xxxxxxx",
+                       "videoCommand": {
+                        "watchEndpoint": {
+                         "videoId": "sho0xxxxxxx"
+                        }
+                       }
+                      }
+                     }
+                    ]
+                   }
+                  }
+                 }
+                }
+               }
+              }
+             },
+             {
+              "listItemViewModel": {
+               "leadingImage": {
+                "sources": [
+                 {
+                  "clientResource": {
+                   "imageName": "HIDE"
+                  }
+                 }
+                ]
+               },
+               "rendererContext": {
+                "commandContext": {
+                 "onTap": {
+                  "innertubeCommand": {
+                   "feedbackEndpoint": {
+                    "feedbackToken": "TOKEN-sho-1",
+                    "actions": [
+                     {
+                      "replaceEnclosingAction": {
+                       "item": {
+                        "notificationMultiActionRenderer": {
+                         "buttons": [
+                          {
+                           "buttonRenderer": {
+                            "serviceEndpoint": {
+                             "undoFeedbackEndpoint": {
+                              "contentId": "sho0xxxxxxx"
+                             }
+                            }
+                           }
+                          }
+                         ]
+                        }
+                       }
+                      }
+                     }
+                    ],
+                    "contentId": "sho0xxxxxxx"
+                   }
+                  }
+                 }
+                }
+               }
+              }
+             },
+             {
+              "listItemViewModel": {
+               "leadingImage": {
+                "sources": [
+                 {
+                  "clientResource": {
+                   "imageName": "FEEDBACK"
+                  }
+                 }
+                ]
+               }
+              }
+             }
+            ]
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}
