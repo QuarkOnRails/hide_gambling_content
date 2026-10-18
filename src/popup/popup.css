@@ -46,3 +46,23 @@ section {
 footer {
   margin-top: 12px;
 }
+.coffee-row {
+  margin-top: 12px;
+  text-align: center;
+}
+.coffee {
+  display: inline-block;
+  padding: 5px 14px;
+  border: 1px solid #ffdd00;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+}
+.coffee:hover {
+  background: rgba(255, 221, 0, 0.12);
+}
+.coffee:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
