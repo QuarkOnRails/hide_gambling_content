@@ -1,209 +1,182 @@
 # Hide Gambling Content
 
-Browser extension that hides gambling content on YouTube: casino and slot
-streams, betting tips, operator promotions. One codebase for **Chrome**
-(and other Chromium browsers) and **Firefox**.
+A browser extension for Chrome and Firefox that hides gambling content on
+YouTube: casino and slot streams, betting tips and gambling-operator
+promotions. It works on the home feed, search results, the sidebar next to a
+video, channel pages, Shorts and the end screen.
 
-It combines three signals:
-
-1. **Keywords** in nine languages (English, Czech, Slovak, German, Polish,
-   Russian, Spanish, Portuguese, Turkish) plus language-independent operator
-   and slot-game names. Keywords are scored: "casino", "gambling" and
-   explicit phrases hide on their own, while ambiguous words such as "slot",
-   "jackpot" or "bonus" need a second hit.
-2. **Channel blocklist**: a bundled JSON list plus your own list.
-3. **Feedback loop**: a channel whose videos keep getting caught by keywords
-   is suggested for the blocklist. Nothing is blocked without your click.
-
-Everything runs locally and only the `storage` permission is needed. The
-extension talks to YouTube itself and to no other server:
-
-- Shorts cards show no channel, so it asks `youtube.com/oembed` who posted a
-  Short. Answers are cached. This request carries no login.
-- It tells your YouTube account "Don't recommend channel" for channels you
-  block, and, with **Tell YouTube too** switched on, "Not interested" or
-  "Don't recommend channel" for what it hides on its own. These requests go
-  out signed in as you; see [Reporting to YouTube](#reporting-to-youtube).
+![The toolbar popup](store/screenshot-1-popup.png)
 
 ## Install
 
-### Chrome / Chromium / Edge / Brave (111 or newer)
+### Chrome, Edge, Brave and other Chromium browsers
 
-1. Open `chrome://extensions`, switch on **Developer mode**.
-2. **Load unpacked** and pick this folder.
+**Chrome Web Store:** coming soon.
 
-Chrome prints a warning about the unknown key `browser_specific_settings`.
-That key is for Firefox and the warning is harmless.
+Until then you can install it by hand (Chrome 111 or newer):
+
+1. On this page, click **Code** → **Download ZIP**, and unzip it.
+2. Open `chrome://extensions` and switch on **Developer mode** (top right).
+3. Click **Load unpacked** and pick the unzipped folder.
+
+Chrome shows a warning about `browser_specific_settings`. That setting is for
+Firefox and the warning is harmless.
 
 ### Firefox (128 or newer)
 
-- For development: `about:debugging` → **This Firefox** → **Load Temporary
-  Add-on** → pick `manifest.json`. It stays until Firefox restarts.
-- For permanent use Firefox requires a signed add-on: run `npm run package`,
-  upload the zip to addons.mozilla.org as an *unlisted* add-on and install the
-  signed `.xpi` you get back. Firefox Developer Edition and ESR can instead
-  turn off `xpinstall.signatures.required`.
+Not on addons.mozilla.org yet. To try it:
 
-Reload open YouTube tabs after installing.
+1. Download and unzip it as above.
+2. Open `about:debugging`, click **This Firefox** → **Load Temporary
+   Add-on…** and pick `manifest.json` in the unzipped folder.
 
-## Use
+Firefox removes temporary add-ons when it restarts.
 
-- The toolbar popup switches hiding on and off, shows how many videos are
-  hidden on the page and lets you block or whitelist the channel you are
-  looking at.
-- **Guard opened videos** deals with a matching video you land on directly.
-  In the Shorts player it is skipped automatically, in the direction you were
-  scrolling. A normal video is paused and blacked out without any message; a
-  small "Show" button in the corner is the way out of a false positive.
-- **Block** (popup or Settings) hides the channel and tells YouTube "Don't
-  recommend channel", so the YouTube app on your phone stops recommending it
-  too. **Tell YouTube too** (popup, off by default) does the same for what
-  the extension hides on its own. See [Reporting to YouTube](#reporting-to-youtube).
-- **Settings** has language toggles, your own keywords, both channel lists,
-  a box to try a title against the current rules, and import/export. Export
-  is how you move your lists between Chrome and Firefox.
+After installing, reload any YouTube tabs that were already open.
 
-## How matching works
+## How it decides what to hide
 
-Text is normalised first: lowercase, accents removed, look-alike Unicode
-letters folded (`𝐂𝐀𝐒𝐈𝐍𝐎` becomes `casino`), invisible characters removed.
-Words are matched on Unicode-aware word boundaries, so `bets` does not match
-`alphabets`.
+- **Keywords** in nine languages (English, Czech, Slovak, German, Polish,
+  Russian, Spanish, Portuguese, Turkish), plus names of gambling operators
+  and slot games. Each video gets a score: strong words such as "casino" or
+  "free spins" hide a video on their own, while ambiguous words such as
+  "slot", "jackpot" or "bonus" need a second hit. Exceptions keep things like
+  "Casino Royale" or "PCIe slot" visible.
+- **Channels**: a built-in list of gambling channels, your own blocklist,
+  and any channel whose name contains words like "casino", "jackpot" or
+  "slots".
+- **Suggestions**: a channel whose videos keep getting hidden by keywords is
+  suggested for your blocklist. Nothing is blocked without your click.
 
-Order of evaluation for each card:
+It reads the video title, the channel name and the description when YouTube
+shows one. Fancy lettering such as 𝐂𝐀𝐒𝐈𝐍𝐎, accents and hidden characters
+don't get past it.
 
-1. channel on the **never hide** list → shown,
-2. channel on a **blocklist**, or channel name containing a **channel-name
-   term** → hidden,
-3. **exceptions** are cut out of the text ("Casino Royale", "PCIe slot",
-   "ключевая ставка"),
-4. score = 2 × distinct strong hits + 1 × distinct weak hits, over the title,
-   the channel name and the description when the page shows one. Hidden when the score reaches the threshold
-   (default 2).
+Channels on your **Never hide** list are always shown, whatever their videos
+are called.
 
-### Keyword entry syntax
+## Using it
 
-| Entry          | Meaning                                                              |
-| -------------- | -------------------------------------------------------------------- |
-| `bonus buy`    | phrase; also matches `bonus-buy`, `bonusbuy`, `bonus, buy`           |
-| `slot\|slots`  | variants of one concept, counted once per title                      |
-| `sázkař*`      | trailing `*` allows any ending                                       |
+### The toolbar popup
 
-Files: `data/keywords/<lang>.json` and `data/brands.json`, each with
-`strong`, `weak` and `exceptions` arrays. To add a language, add the file
-and one line to `LANGUAGES` in `src/store.js`.
+Click the extension's icon to:
 
-### Channel list
+- turn hiding on or off,
+- see how many videos are hidden on the current page,
+- **Block** or **Never hide** the channel you are looking at (on a video,
+  Short or channel page),
+- switch **Guard opened videos** and **Tell YouTube too**,
+- open **Settings**.
 
-`data/channels.json`:
+### Guard opened videos
 
-```json
-{ "id": "UCDyrCJyFaOLc8OnnCd0Khcg", "handle": "", "name": "Brian Christopher Slots" }
-```
+On by default. It covers videos you land on directly, for example from a
+link. A matching Short is skipped automatically, in the direction you were
+scrolling. A matching normal video is paused and blacked out; a small
+**Show** button in the corner lets you watch it anyway if it was hidden by
+mistake.
 
-A channel is matched by `id`, or by a compact key built from both handle and
-name: `MrHandPay`, `@mrhandpay` and `Mr. Hand Pay` are the same channel. So an
-entry with only a name is enough, which matters because YouTube cards rarely
-show the id. The directory-sourced entries carry ids and names; entries tagged
-`user-reported` carry the name only.
+### Settings
 
-### Channel-name terms
+- **General**: hiding on or off, Guard opened videos, Tell YouTube too, and
+  the score needed to hide (default 2; higher hides less).
+- **Keyword languages**: turn off languages you don't need.
+- **Try a title**: paste any video title, and optionally a channel name, to
+  see whether it would be hidden and which words counted.
+- **Your keywords**: add your own strong words, weak words, exceptions and
+  channel-name words (see below).
+- **Suggested channels**, **Blocked channels** and **Never hide**: your
+  channel lists. To add a channel, type its @handle, its URL, its channel ID
+  (UC…) or its exact name.
+- **Reported to YouTube**: everything the extension has told your YouTube
+  account.
+- **Backup**: export your keywords, lists and settings as a file, and import
+  them again. This is also how you move them between Chrome and Firefox.
 
-The `channel` array in `data/brands.json` (and "Channel name contains" in
-Settings) blocks every channel whose name or handle contains a term, also
-inside glued words: `jackpot` blocks "JackpotJudo" and `@jackpotjudo`.
-Built in: casino (all spellings), jackpot, gambling/gambler/gambles, slots,
-bonus hunt, high roller and sports betting. The never-hide list wins over it.
+### Writing your own keywords
 
-## Reporting to YouTube
+One entry per line. Upper and lower case and accents don't matter.
 
-Hiding only works in the browser that runs the extension. To reach the
-YouTube app on a phone, it also tells your YouTube account what it hid, with the
-same request YouTube's own ⋮ menu sends:
+| Entry         | Meaning                                                    |
+| ------------- | ---------------------------------------------------------- |
+| `bonus buy`   | a phrase; also matches `bonus-buy`, `bonusbuy`, `bonus, buy` |
+| `slot\|slots` | variants of one word, counted once per title               |
+| `sázkař*`     | a trailing `*` allows any ending                           |
 
-| Hidden because                        | Sent                     | When                        |
+- **Strong** words hide a video on their own (2 points).
+- **Weak** words need a second hit (1 point).
+- **Exceptions** are phrases that are ignored, so their words don't count.
+- **Channel name contains** blocks every channel whose name or handle
+  contains the word, even inside glued words: `jackpot` blocks
+  "JackpotJudo".
+
+## Telling YouTube
+
+Hiding only works in the browser where the extension is installed. To reach
+the YouTube app on your phone too, the extension can tell your YouTube
+account what it hid. It uses the same feedback as YouTube's own ⋮ menu:
+
+| Hidden because                        | YouTube is told          | When                        |
 | ------------------------------------- | ------------------------ | --------------------------- |
 | you blocked the channel               | Don't recommend channel  | always                      |
 | channel on the built-in list          | Don't recommend channel  | with **Tell YouTube too**   |
-| channel name contains a channel term  | Don't recommend channel  | with **Tell YouTube too**   |
+| channel name contains a channel word  | Don't recommend channel  | with **Tell YouTube too**   |
 | title or description keywords only    | Not interested (video)   | with **Tell YouTube too**   |
 
-- Reports are sent from **home-feed cards** only (including Shorts shown in
-  the home feed, which get "Not interested"). So a blocked channel is
-  reported the next time one of its videos shows up in your home feed in the
-  browser; until then Settings shows it as "YouTube not told yet".
+**Tell YouTube too** is off by default.
+
+- Reports are sent only from your **home feed**. So a channel you block is
+  reported the next time one of its videos shows up in your home feed; until
+  then Settings shows it as "YouTube not told yet".
 - Each channel and video is reported once, at most one report every 3
-  seconds and 30 a day. Never-hide channels are never reported. Nothing is
-  sent while signed out.
-- If YouTube refuses a report, reporting stops in that tab and the popup says
-  so. Hiding keeps working.
-- Settings → **Reported to YouTube** lists everything sent. Unblocking a
-  channel does not undo it on YouTube; delete the entry in Google My Activity
-  (Other activity → YouTube "Not interested" feedback).
+  seconds and 30 a day. Channels on your Never hide list are never reported.
+  Nothing is sent while you are signed out.
+- If YouTube refuses a report, reporting stops in that tab and the popup
+  tells you. Hiding keeps working.
+- Removing a channel from your blocklist does not undo the report on
+  YouTube. To undo it, delete the entry in
+  [Google My Activity](https://myactivity.google.com/) under Other activity →
+  YouTube "Not interested" feedback.
 
-How it works: `src/page.js` runs inside YouTube's own page (`"world":
-"MAIN"`), because only there is the data YouTube attaches to its cards
-visible. It takes the code of the right ⋮ menu entry from a home-feed card's
-data (`ytd-rich-item-renderer.data`), only if that entry names exactly the
-expected video, and posts it to `/youtubei/v1/feedback`. The content script decides what to report and keeps
-the queue. When YouTube changes its data, `ACTION_ICONS` and `cardData()` in
-`src/page.js` are the places to fix.
+## Privacy
 
-## Development
+Everything runs in your browser. There is no account, no analytics and no
+server of its own. The extension talks only to YouTube: to look up who posted
+a Short (without your login), and to send the feedback described above (as
+you). It needs only two permissions: storage for your settings and lists,
+and access to youtube.com. Details in the [privacy policy](PRIVACY.md).
 
-No build step and no dependencies.
+## Something slipped through, or a harmless video got hidden
 
-```
-npm test               # unit tests (matcher, normalisation, store, report codes, data files)
-npm run e2e            # loads the real extension into headless Chromium
-npm run lint:firefox   # web-ext lint
-npm run package        # dist/hide-gambling-content-<version>.zip
-```
+YouTube changes its pages often, so this can happen.
 
-The end-to-end test is fully local: it serves `test/e2e/*.html` from
-127.0.0.1 and maps `www.youtube.com` to it inside the test browser, including
-stand-ins for YouTube's oEmbed and feedback endpoints. Stored settings for a
-test case are written through `test/e2e/seed.html`, an extension page that is
-not packaged.
-
-Layout:
-
-```
-manifest.json
-src/normalize.js, matcher.js    pure logic, also runs under Node
-src/selectors.js                every YouTube selector
-src/extract.js                  DOM -> { videoId, title, channel… }
-src/store.js                    storage.local, bundled JSON, feedback loop, Shorts lookup cache
-src/content.js, content.css     observer, marking, watch-page guard, report queue
-src/page.js                     runs in YouTube's page: sends reports to YouTube
-src/popup/, src/options/        UI
-data/                           keyword and channel lists
-```
-
-There is no background script. Popup, options page and content scripts
-share state through `storage.local` and react to `storage.onChanged`.
-
-## When something is not hidden
-
-YouTube changes its markup often.
-
-- a video that should be hidden is shown → open Settings and paste the title
-  into **Try a title**. If it scores, the card's markup is not recognised: fix
-  `src/selectors.js`. If it does not score, add a keyword.
-- a harmless video is hidden → find out why: in the browser's developer tools
-  search the Elements panel for `data-restrict-info`; every hidden card carries
-  the rule that fired. Then add an exception phrase, or put the channel on the
-  never-hide list.
+- **A gambling video is still shown.** Paste its title into Settings → **Try
+  a title**. If it would be hidden, YouTube has changed its page and the
+  extension needs an update: please
+  [open an issue](https://github.com/QuarkOnRails/hide_gambling_content/issues)
+  and say where on YouTube it was. If it would not be hidden, add one of its
+  words under **Your keywords**, or block the channel.
+- **A harmless video is hidden.** Paste its title and channel into **Try a
+  title** to see which words counted. Then add the phrase as an exception,
+  or put the channel on **Never hide**.
 
 ## Limits
 
-- Titles, channel names and any description text shown on the page are read.
-  Search results show a description snippet and the watch page shows the
-  full description. Home-feed cards and Shorts show none, so a video whose
-  only gambling mention is in its description is caught on those surfaces
-  only once it is opened. Tags and the video itself are never read.
-- Shorts cards carry no channel information, so each Short's channel is looked
-  up; the card stays invisible for a moment until YouTube answers. If the
-  lookup fails, only title keywords apply to that Short.
-- The YouTube mobile apps cannot be filtered. Firefox for Android can run the
-  extension on m.youtube.com; the mobile selectors are best effort.
+- Home-feed cards and Shorts show no description, so a video whose only
+  gambling mention is in its description is hidden there only once you open
+  it. Tags and the video itself are never checked.
+- Shorts don't show their channel, so the extension asks YouTube who posted
+  each one. A Short stays invisible for a moment until YouTube answers.
+- The YouTube apps on phones and TVs can't run extensions. **Tell YouTube
+  too** is the way to reduce gambling content there. Firefox for Android can
+  run the extension on m.youtube.com, on a best-effort basis.
+
+## Support
+
+- Bugs and ideas:
+  [GitHub issues](https://github.com/QuarkOnRails/hide_gambling_content/issues)
+- If the extension helps you, you can
+  [buy me a coffee](https://buymeacoffee.com/quarkonrails) ☕
+
+Want to change the code or the keyword lists? See
+[DEVELOPMENT.md](DEVELOPMENT.md).
