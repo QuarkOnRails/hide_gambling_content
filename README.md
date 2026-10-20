@@ -9,30 +9,14 @@ video, channel pages, Shorts and the end screen.
 
 ## Install
 
-### Chrome, Edge, Brave and other Chromium browsers
-
-**Chrome Web Store:** coming soon.
-
-Until then you can install it by hand (Chrome 111 or newer):
-
-1. On this page, click **Code** → **Download ZIP**, and unzip it.
-2. Open `chrome://extensions` and switch on **Developer mode** (top right).
-3. Click **Load unpacked** and pick the unzipped folder.
-
-Chrome shows a warning about `browser_specific_settings`. That setting is for
-Firefox and the warning is harmless.
-
-### Firefox (128 or newer)
-
-Not on addons.mozilla.org yet. To try it:
-
-1. Download and unzip it as above.
-2. Open `about:debugging`, click **This Firefox** → **Load Temporary
-   Add-on…** and pick `manifest.json` in the unzipped folder.
-
-Firefox removes temporary add-ons when it restarts.
+- **Chrome, Edge, Brave and other Chromium browsers** (111 or newer):
+  [Chrome Web Store](https://chromewebstore.google.com/detail/hide-gambling-content/ocoofbkbgoidpbeappjanldbbdillbhf)
+- **Firefox** (128 or newer):
+  [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/hide-gambling-content/)
 
 After installing, reload any YouTube tabs that were already open.
+
+To run it from source instead, see [DEVELOPMENT.md](DEVELOPMENT.md).
 
 ## How it decides what to hide
 
